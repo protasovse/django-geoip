@@ -9,13 +9,13 @@ from ..ipgeobase import IpGeobase
 class Command(BaseCommand):
 
     help = 'Updates django-geoip data stored in db'
-
     def add_arguments(self, parser):
+
+        # Named (optional) arguments
         parser.add_argument('--clear',
             action='store_true',
             default=False,
-            help="Clear tables prior import"
-        )
+            help='Clear tables prior import')
 
     def get_logger(self, verbosity):
         logger = logging.getLogger('import')
